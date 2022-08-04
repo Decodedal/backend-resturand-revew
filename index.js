@@ -1,10 +1,18 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 
+
 app.get('/',(req,res)=>{
-    res.send('i like to move it move it')
+    res.status(404).send('i like to shake it move it')
 })
 
-app.listen(3333,(req,res)=>{
-    console.log('working on 3333')
+app.get('*',(req,res)=>{
+    res.send(`
+    <h1>404 Page does not exist</h1>
+    `)
+})
+
+app.listen(process.env.PORT,(req,res)=>{
+    console.log(`Listening on ${process.env.PORT}`)
 })
