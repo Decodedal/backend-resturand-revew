@@ -5,7 +5,7 @@ const app = express();
 app.use('/places', require('./controllers/places'))
 
 app.get('/',(req,res)=>{
-    res.status(404).send('i like to shake it move it')
+    res.status(404).send('Hello User')
 })
 
 app.get('*',(req,res)=>{
