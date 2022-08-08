@@ -10,7 +10,7 @@ app.get('/',(req,res)=>{
 
 app.get('*',(req,res)=>{
     res.send(`
-    <h1>404 Page does not exist</h1>
+    <h1> 404 Page does not exist </h1>
     `)
 })
 
