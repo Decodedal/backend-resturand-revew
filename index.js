@@ -13,9 +13,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('*',(req,res)=>{
-    res.send(`
-    <h1> 404 Page does not exist </h1>
-    `)
+   res.render('error404')
 })
 
 app.listen(process.env.PORT,(req,res)=>{
