@@ -4,9 +4,9 @@ const Def = require('../default');
 function new_form(){
     return(
         <Def>
-            <head>
+            {/* <head>
             <link rel='stylesheet' href='style.css'></link>
-            </head>
+            </head> */}
           <main>
             <h1>Add a new Place</h1>
             <form method='POST' action='/places'>
