@@ -12,7 +12,7 @@ return(
             <div className = 'center-me'>
                 Photo by <a href='https://unsplash.com/photos/eeqbbemH9-c?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink'>Chad Montano</a> on <a href='https://unsplash.com/'>Unsplash</a>
             </div>
-            <button className='btn-primary'>Places Page</button>
+            <a href='/places'><button className='btn-primary'>Places Page</button></a>
         </main>
     </Def>
 )
