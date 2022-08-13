@@ -28,7 +28,7 @@ router.get('/:id/edit', (req, res) => {
   }
   else {
     console.log(id)
-    res.render('places/edit', { place: places[id] })
+    res.render('places/edit', { place: places[id],index:id })
   }
 })
 
