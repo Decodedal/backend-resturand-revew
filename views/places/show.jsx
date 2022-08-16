@@ -8,7 +8,6 @@ function show(data){
                 <h1>{data.place.name}</h1>
                 <img src={data.place.pic} alt = {data.place.name}/>
                 <div>
-                    <p>this is the data id: {data.id}</p>
                     <h2>Rating</h2>
                     <p>Not Rated</p>
                 </div>
