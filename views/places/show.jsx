@@ -54,6 +54,28 @@ function show(data){
                     {comments}
                 </div>
                 </div>
+                <div>
+                    <form method="POST" action="/:id/comments">
+                        <div className="form-group">
+                           <label htmlFor="author">Author</label>
+                           <input className="form-control" name="author" id="author"/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="content">Content</label>
+                            <input className="form-control" name="content" id="content"/>
+                            </div>
+                            <div className="form-group">
+                                <br></br>
+                            <label htmlFor="points">Stars</label>
+                            <input className="form-control "type="number" id="stars" name="stars" step="0.5"/>
+                            </div>
+                            <div className="form-group">
+                            <label htmlFor="rant">Rant</label>
+                             <input type= 'checkbox' name="rant" id='rant'/>
+                             </div>
+                            <input className='btn btn-primary' type="submit" value="Add comment"/>
+                    </form>
+                </div>
             </main>
         </Def>
     )
