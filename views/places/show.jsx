@@ -8,6 +8,22 @@ function show(data){
             No Comments yet!
         </h3>
     )    
+    let rating = (
+        <h3 className="inactive">
+            Not yet rated
+        </h3>
+    )
+    if(data.place.comments.length){
+        let sumRatings = data.place.comments.reduce((num, comments)=>{
+            return num + comments.stars
+        },0)
+        let averageRating = sumRatings /data.place.comments.length
+        rating = (
+            <h3>
+                {Math.round(averageRating)} starts
+            </h3>
+        )
+    }
     if (data.place.comments.length) {
           comments = data.place.comments.map(c => {
             return (
@@ -35,7 +51,7 @@ function show(data){
                 <div>
                 <h1>{data.place.name}</h1>
                     <h2>Rating</h2>
-                    <p>Not Rated</p>
+                    <p>{rating}</p>
                 </div>
                 <div>
                     <h2>Description</h2>
@@ -55,7 +71,7 @@ function show(data){
                 </div>
                 </div>
                 <div>
-                    <form method="POST" action="/:id/comments">
+                    <form method="POST" action={`/comment`}>
                         <div className="form-group">
                            <label htmlFor="author">Author</label>
                            <input className="form-control" name="author" id="author"/>
