@@ -43,19 +43,40 @@ router.get('/:id',(req,res)=>{
        })
 })
 
-
+//actually sends the edit
 router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+  db.Place.findByIdAndUpdate(req.params.id, req.body)
+          .then(()=>{
+            res.redirect(`/places/${req.params._id}`)
+          })
+          .catch(err=>{
+            console.log(err)
+            res.render('error404')
+          })
 })
 
 
-
+//delete
 router.delete('/:id',(req,res)=>{
-res.send('DELEATE /places/:id stub')
+db.Place.findByIdAndDelete(req.params.id)
+        .then(place=>{
+          res.redirect('/places')
+        })
+        .catch(err=>{
+          console.log('err',err)
+          res.render('error404')
+        })
 })
 
+//edit route
 router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
+    db.Place.findById(req.params.id)
+             .then(place =>{
+              res.render('places/edit',{place})
+             })
+             .catch(err =>{
+              res.render('error404')
+             })
 })
 //comments
 router.post('/:id/comment',(req,res)=>{
