@@ -34,7 +34,7 @@ router.get('/:id',(req,res)=>{
     db.Place.findById(req.params.id)
        .populate('comments')
        .then(place=>{
-        console.log(place.comments)
+        console.log(place)
         res.render('places/show',{place})
        })
        .catch(err=>{
@@ -74,9 +74,6 @@ router.post('/:id/comment',(req,res)=>{
             res.render('error404')
           })
         })
-          .catch(err=>{
-            res.render('error404')
-          })
 })
 
 router.post('/:id/rant',(req,res)=>{

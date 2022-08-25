@@ -58,8 +58,8 @@ function show(data){
                    <h3>{data.place.showEstablished()}</h3>
                    <h4>Serving {data.place.cuisines}</h4>
                 </div>
-                <a href={`/places/${data.id}/edit`} className="btn-btn-warning">Edit</a>
-                <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
+                <a href={`/places/${data.place.id}/edit`} className="btn-btn-warning">Edit</a>
+                <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
                     <button type="sumbit" className="'btn btn-danger">
                         Delete
                     </button>
@@ -71,7 +71,7 @@ function show(data){
                 </div>
                 </div>
                 <div>
-                    <form method="POST" action={`/comment`}>
+                    <form method="POST" action={`/places/${data.place._id}/comment`}>
                         <div className="form-group">
                            <label htmlFor="author">Author</label>
                            <input className="form-control" name="author" id="author"/>
